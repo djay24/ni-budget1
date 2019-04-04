@@ -10,7 +10,9 @@ config = {
  
  let categories = {}
  let food, bills, entertainment, personal, clothing, miscellaneous; // delcaring vaiables for the chart categories
- 
+ let budget = 500;
+ let sumOfPurchases = 0;
+ let totalSpent = document.getElementById('totalSpent')
  
  let dbref = firebase.database(); // setting var equal to the firebase database
  let receiptRef = dbref.ref('receipts'); // referencing the receipts data in the database
@@ -29,17 +31,20 @@ config = {
                 categories[recCategory] += 1;
             } else {
                 categories[recCategory] = 1;
- 
+            
+            
         }
         // console.log(categories)
- 
+        sumOfPurchases = sumOfPurchases + parseFloat(childData.price);
+            console.log(sumOfPurchases)
         addReceipt(recPrice, recDate, recCategory, recLocation, recDescription);
  
         let item = document.getElementById("receiptList");
  
     })
     makeChart(categories)
-
+    makeBarChart(sumOfPurchases)
+    totalSpent.innerText = "Total Spent: $" + sumOfPurchases;
  })
  
  let list = document.getElementById("receiptList"); // creating a reference to the list in html
@@ -95,7 +100,7 @@ config = {
     ]
  };
  let options = {
-    cutoutPercentage: 40,
+    cutoutPercentage: 50,
     hoverBackgroundColor: "blue"
  }
  
@@ -108,3 +113,47 @@ config = {
  });
  
  }
+
+ function makeBarChart(sum) {
+    let data = {
+        labels: [
+            'Money Spent'
+        ],
+        datasets: [{
+            label: "Budget",
+            backgroundColor: ['limegreen'],
+            hoverBackgroundColor: ["blue"],
+            data: [
+                sum,
+                budget,
+                0
+            ]
+        }]
+    }
+
+    let options = {
+        options: {
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        min: 0
+                    }
+                }],
+                yAxes: [{
+
+                }]
+            }
+        }
+    }
+
+
+
+    
+let barChrt = document.getElementById('barChart').getContext('2d');
+var myBarChart = new Chart(barChrt, {
+    type: 'horizontalBar',
+    data: data,
+    options: options
+});
+
+}

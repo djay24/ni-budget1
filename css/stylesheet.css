@@ -2,8 +2,24 @@
     padding: 0;	  padding: 0;
     margin: 0;	  margin: 0;
 }
+
+.padding-right {
+    padding-right: 10px;
+}
+
+.margin-top {
+    margin-top: 50px;
+}
+.margin-top75 {
+    margin-top: 75px;
+}
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
 body{
     font-family: 'Montserrat', sans-serif;
+    padding: 10px;
 
 
 }
@@ -50,4 +66,8 @@ body{
 
 .footer{
     height:40px;
+}
+
+.total-spent {
+    float: right;
 }

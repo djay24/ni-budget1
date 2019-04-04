@@ -12,7 +12,10 @@
     padding-top: 10px;
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
 
+}
 
 .navbar, .footer {
     background-color:#D3E3FC;

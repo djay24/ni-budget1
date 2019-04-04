@@ -1,5 +1,8 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 .margin-top{
-    margin-top: 20vh;
+    margin-top: 15vh;
 }
 
 .margin-top15{

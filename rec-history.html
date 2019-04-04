@@ -18,23 +18,43 @@
 
   </head>
   <body>
-      <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-              <div class="navbar-header">
-                  <a class="navbar-brand" href="#">
-                    <img alt="Brand" class="nav-brand" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc75Ss-Kj0Md4H5gbxsUCg113pjD3ONuW5GwpDL4z4F0zUrc-WnQ">
-                  </a>
-                  
-            </div>
-          </div><!-- /.container-fluid -->
-        </nav>
+      <nav class="navbar navbar-light navbar-fixed-top ">
+          <div class="navbar-header">
+            <img src="img/receiptLogo.png" alt="logo" width="50" height="50">
+           </a>
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed"
+           data-target="#navbar-collapse">
+            
+           </div>
+           <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right padding-right">
+             <li class="active">
+             <a href="index.html">Home
+              <span class="sr-only">(current)</span>
+             </a>
+            </li>
+             <li>
+              <a href="signin.html">Sign in</a>
+             </li>
+             <li>
+              <a href="receipt.html">Receipt-input</a>
+             </li>
+             <li>
+              <a href="graphs-data.html">Data</a>
+             </li>
+            </ul>
+           </div>
+         </div>
+         </nav>
+         <!-- NAVBAR ENDS -->
+         ​
       <div class="container-fluid">
         <div class="row margin-top">
           <div class="col-sm-offset-5 col-sm-2">
             <h1>Receipts</h1>
             <sub class="sub-title">Double click to remove</sub>
           </div>
-        <div class="row ">
+        <div class="row margin-bottom">
             <div class="col-sm-offset-2 col-sm-9">
               <ul id="receiptList" class="list-box list-group ">
 
@@ -42,11 +62,31 @@
           </div>
         </div>
         </div>
-          <canvas id="mycanvas" class="my-chart"></canvas>
-          <canvas id="barChart" height="50px"></canvas>
+          <!-- <canvas id="mycanvas" class="my-chart"></canvas>
+          <canvas id="barChart" height="50px"></canvas> -->
       </div>
 
+          <!-- FOOTER BEGINS-->
+​
+      <footer class="bg-light footer navbar-fixed-bottom navbar-expand-lg">
+      <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; DMW-HALO</p>
       
+      </div>
+      ​
+      </div>
+      <div class="col-sm-2 navbar-fixed-bottom social">
+      <a href=""><i class="fab fa-facebook"></i>
+      <span class="hidden-xs">Facebook</span>
+      </a> 
+      <a href=""><i class="fab fa-twitter"></i>
+      <span class="hidden-xs">Twitter</span>
+      </a>
+      <a href=""><i class="fab fa-linkedin"></i>
+      <span class="hidden-xs">Linkedin</span>
+      </a>
+      </div>
+      </footer>
 
 <!-- initalizing firebase -->
 <script src="config.js"></script>

@@ -39,9 +39,9 @@ receiptRef.on('value', function(snapshot) {  // getting snapshot of the values o
         addReceipt(recPrice, recDate, recCategory, recLocation, recDescription);
 
     })
-    makeChart(categories) // put the function call here to have it run out side of the for loop
-    console.log(sumOfPurchases);
-    makeBarChart(sumOfPurchases);
+    // makeChart(categories) // put the function call here to have it run out side of the for loop
+    // console.log(sumOfPurchases);
+    // makeBarChart(sumOfPurchases);
 })
 
 
@@ -67,98 +67,95 @@ function addReceipt(price, date, category, location, description ) {
 };
 
 
-// trying to get chart to get info dynamiclly
+// // trying to get chart to get info dynamiclly
 
-function makeChart(categories){
+// function makeChart(categories){
     
-let data = {
-    datasets: [{
-        data: [
-             categories.food,
-             categories.bills,
-             categories.entertainment, 
-             categories.personal,
-             categories.clothing,
-             categories.miscellaneous
-        ],
-        backgroundColor: [
-            'blue',
-            'red',
-            'green',
-            'orange',
-            'teal',
-            'pink'
-        ]
-    }],
+// let data = {
+//     datasets: [{
+//         data: [
+//              categories.food,
+//              categories.bills,
+//              categories.entertainment, 
+//              categories.personal,
+//              categories.clothing,
+//              categories.miscellaneous
+//         ],
+//         backgroundColor: [
+//             'blue',
+//             'red',
+//             'green',
+//             'orange',
+//             'teal',
+//             'pink'
+//         ]
+//     }],
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        'Food',
-        'Bills',
-        'Entertainment',
-        'Personal',
-        'Clothing',
-        'Miscellaneous'
-    ]
-};
-let options = {
-    cutoutPercentage: 40,
-    hoverBackgroundColor: "blue"
-}
+//     // These labels appear in the legend and in the tooltips when hovering different arcs
+//     labels: [
+//         'Food',
+//         'Bills',
+//         'Entertainment',
+//         'Personal',
+//         'Clothing',
+//         'Miscellaneous'
+//     ]
+// };
+// let options = {
+//     cutoutPercentage: 40,
+//     hoverBackgroundColor: "blue"
+// }
 
-let chrt = document.getElementById('mycanvas').getContext('2d');
-var myDoughnutChart = new Chart(chrt, {
-    type: 'pie',
-    data: data,
-    options: options
+// let chrt = document.getElementById('mycanvas').getContext('2d');
+// var myDoughnutChart = new Chart(chrt, {
+//     type: 'pie',
+//     data: data,
+//     options: options
     
-});
+// });
 
-}
+// }
 
-function makeBarChart(sum) {
-    let data = {
-        labels: [
-            'Money Spent'
-        ],
-        datasets: [{
-            label: "Budget",
-            backgroundColor: ['limegreen'],
-            hoverBackgroundColor: ["blue"],
-            data: [
-                sum,
-                budget,
-                0
-            ]
-        }]
-    }
+// function makeBarChart(sum) {
+//     let data = {
+//         labels: [
+//             'Money Spent'
+//         ],
+//         datasets: [{
+//             label: "Budget",
+//             backgroundColor: ['limegreen'],
+//             hoverBackgroundColor: ["blue"],
+//             data: [
+//                 sum,
+//                 budget,
+//                 0
+//             ]
+//         }]
+//     }
 
-    let options = {
-        options: {
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        min: 0
-                    }
-                }],
-                yAxes: [{
+//     let options = {
+//         options: {
+//             scales: {
+//                 xAxes: [{
+//                     ticks: {
+//                         min: 0
+//                     }
+//                 }],
+//                 yAxes: [{
 
-                }]
-            }
-        }
-    }
+//                 }]
+//             }
+//         }
+//     }
 
 
 
     
-let barChrt = document.getElementById('barChart').getContext('2d');
-var myBarChart = new Chart(barChrt, {
-    type: 'horizontalBar',
-    data: data,
-    options: options
-});
+// let barChrt = document.getElementById('barChart').getContext('2d');
+// var myBarChart = new Chart(barChrt, {
+//     type: 'horizontalBar',
+//     data: data,
+//     options: options
+// });
 
-
-
-
-}
+// }
