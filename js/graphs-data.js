@@ -117,10 +117,10 @@ config = {
  function makeBarChart(sum) {
     let data = {
         labels: [
-            'Money Spent'
+            'Budget'
         ],
         datasets: [{
-            label: "Budget",
+            label: "Money Spent",
             backgroundColor: ['limegreen'],
             hoverBackgroundColor: ["blue"],
             data: [

@@ -58,6 +58,9 @@ body{
    .sub-title {
        text-align: left;
    }
+   .list-item{
+       width: 30%;
+   }
 }
 
 @media (max-width: 530px) {
